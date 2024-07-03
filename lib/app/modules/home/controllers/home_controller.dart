@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
+import 'package:unsplash_ui/app/data/userdata.dart';
 import 'package:unsplash_ui/app/modules/home/services/unsplash_api_services.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
   UnsplashService response = UnsplashService();
+  RxBool loaded = false.obs;
 
   @override
   void onInit() async {
@@ -13,15 +12,10 @@ class HomeController extends GetxController {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void onload() {
+    if (usersData.isNotEmpty) {
+      loaded.value = true;
+    }
+    return;
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
