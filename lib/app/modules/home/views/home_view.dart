@@ -90,7 +90,17 @@ class HomeView extends GetView<HomeController> {
                           imageLikes: usersData[3].likes),
                     ],
                   )
-                : const Text("No data available to load")
+                : const Text("No data available to load"),
+
+            // if (usersData.isEmpty)
+            //   ListView.builder(itemBuilder: (context, index) {
+            //     return CustomCard(
+            //       imagetitle: usersData[index].userName.toString(),
+            //       imageUrl: usersData[index].imageUrl.toString(),
+            //       profileImage: usersData[index].userProfileUrl.toString(),
+            //       imageLikes: usersData[index].likes,
+            //     );
+            //   })
           ],
         ),
       ),

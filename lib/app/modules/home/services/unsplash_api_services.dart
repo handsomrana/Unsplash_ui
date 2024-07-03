@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:get/get_state_manager/src/simple/list_notifier.dart';
 import 'package:http/http.dart' as http;
 import 'package:unsplash_ui/app/data/userdata.dart';
 
@@ -26,7 +25,7 @@ class UnsplashService {
         print("data loaded successfully");
       }
 
-      for (int i = 0; i < 4; i++) {
+      for (int i = 0; i < photos.length; i++) {
         usersData.add(UserDataModel(
             id: photos[i]["id"],
             likes: photos[i]["likes"],
